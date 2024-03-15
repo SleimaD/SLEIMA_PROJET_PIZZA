@@ -1,0 +1,45 @@
+{
+    "ingredients": [
+      {
+        "name": "Mozzarella",
+        "price": 0.5,
+        "image": "mozzarella.png"
+      },
+      {
+        "name": "Basilic",
+        "price": 0.2,
+        "image": "basilic.png"
+      },
+      {
+        "name": "Viande",
+        "price": 1.5,
+        "image": "viande.png"
+      },
+      {
+        "name": "Poulet",
+        "price": 1.0,
+        "image": "poulet.png"
+      },
+      {
+        "name": "Oignons",
+        "price": 0.3,
+        "image": "oignon.png"
+      },
+      {
+        "name": "Olives",
+        "price": 0.4,  
+        "image": "olives.png"
+      },
+      {
+        "name": "champignons",
+        "price": 0.4,  
+        "image": "champignons.png"
+      },
+      {
+        "name": "piment vert",
+        "price": 0.4,  
+        "image": "pimentvert.png"
+      }
+    ]
+}
+  

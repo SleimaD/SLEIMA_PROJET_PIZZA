@@ -1,0 +1,47 @@
+{
+    "pizzas": [
+      {
+        "id": 1,
+        "name": "Burrata",
+        "price": 13,
+        "image": "pizzaburrataa.png",
+        "ingredients": ["tomato", "burrata", "basil"]
+      }, 
+      {
+        "id": 2,
+        "name": "Pepperoni",
+        "price": 15,
+        "image": "pizzapepperoni.png",
+        "ingredients": ["tomato", "mozzarella", "pepperoni"]
+      },
+      {
+        "id": 3,
+        "name": "Anchovy",
+        "price": 11,
+        "image": "pizzaanchois.png",
+        "ingredients": ["tomato", "mozzarella", "basil", "anchovy"]
+      },
+      {
+        "id": 4,
+        "name": "Ham",
+        "price": 14,
+        "image": "pizzajambon.png",
+        "ingredients": ["tomato", "mozzarella", "ham"]
+      },
+      {
+        "id": 5,
+        "name": "Mushrooms",
+        "price": 16,
+        "image": "pizzapepchamp.png",
+        "ingredients": ["tomato", "mozzarella", "pepperoni", "mushrooms"]
+      },
+      {
+        "id": 6,
+        "name": "Feta",
+        "price": 12,
+        "image": "pizzafeta.png",
+        "ingredients": ["tomato", "mozzarella", "feta", "black olives", "onions "]
+      }
+    ] 
+  }
+  
