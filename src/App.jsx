@@ -12,7 +12,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/SLEIMA_PROJET_PIZZA" element={<Home />} />
         <Route path="/pizzas" element={<PizzaList />} />
         <Route path='/createpizza' element={<CreatePizza/>} />
         <Route path="/cart" element={<Cart />} />

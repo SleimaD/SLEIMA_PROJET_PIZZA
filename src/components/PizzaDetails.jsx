@@ -11,28 +11,33 @@ const PizzaDetails = () => {
   const { pizzaId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [pizza, setPizza] = useState(null);
+  const [pizza, setPizza] = useState(null); // State to hold the pizza details
 
+
+  
+ // useEffect to find and set the pizza details when pizzaId changes
   useEffect(() => {
     const foundPizza = data.pizzas.find(pizza => pizza.id.toString() === pizzaId);
     setPizza(foundPizza);
   }, [pizzaId]);
 
+   // If pizza details are not loaded yet, show a loading message
   if (!pizza) {
     return <div>Loading...</div>; 
   }
 
-    let add = () => {
-        if(pizza) {
-        dispatch(addToCart(pizza));
-        navigate('/cart'); 
-        }
-    };
+  // Function to add the pizza to the cart and navigate to the cart page
+  let add = () => {
+    if(pizza) {
+    dispatch(addToCart(pizza));
+    navigate('/cart'); 
+    }
+  };
 
-    let imagePath = (imageFile) => {
-        const baseUrl = import.meta.url; 
-        return new URL(`../assets/${imageFile}`, baseUrl).href; 
-    }; 
+  let imagePath = (imageFile) => {
+    const baseUrl = import.meta.url; 
+    return new URL(`../assets/${imageFile}`, baseUrl).href; 
+  }; 
 
 
   

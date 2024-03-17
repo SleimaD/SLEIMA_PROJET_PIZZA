@@ -6,21 +6,28 @@ import './../index.css'
 
 const Cart = () => {
   const dispatch = useDispatch();
+
+  
+ // Use useSelector to access the cart items and total from the Redux store
   const cartItems = useSelector((state) => state.cart.items);
   const total = useSelector((state) => state.cart.total);
 
+  // Function to add an item to the cart
   const add = (pizza) => {
     dispatch(addToCart(pizza));     
   };
 
+  // Function to remove an item from the cart
   const remove = (pizzaId) => {
     dispatch(removeFromCart(pizzaId));
   };
 
+  // Function to remove all instances of an item from the cart
   const removeAll = (pizzaId) => {
     dispatch(removeWholeItemFromCart(pizzaId));
   };
 
+   // Function to generate the image path for an item
   let imagePath = (imageFile) => {
     const baseUrl = import.meta.url; 
     return new URL(`../assets/${imageFile}`, baseUrl).href; 

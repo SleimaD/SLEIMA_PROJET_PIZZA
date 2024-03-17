@@ -10,7 +10,8 @@ export const cartSlice = createSlice({
     // Ajoute une pizza au panier ou augmente sa quantité
     addToCart: (state, action) => {
       const pizza = action.payload;
-      if (state.items[pizza.id]) {
+      // If the pizza is already in the cart
+      if (state.items[pizza.id]) { 
         state.items[pizza.id].quantity += 1;
       } else {
         state.items[pizza.id] = { data: pizza, quantity: 1 };
@@ -33,7 +34,7 @@ export const cartSlice = createSlice({
     removeWholeItemFromCart: (state, action) => {
       const pizzaId = action.payload;
       if (state.items[pizzaId]) {
-        state.total -= (state.items[pizzaId].data.price * state.items[pizzaId].quantity);
+        state.total -= (state.items[pizzaId].data.price * state.items[pizzaId].quantity); // Decrease the total price by the pizza's total price
         delete state.items[pizzaId];
       }
     },

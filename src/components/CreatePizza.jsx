@@ -11,24 +11,35 @@ const CreatePizza = () => {
   const [ingredients, setIngredients] = useState({});
   let dispatch = useDispatch();
   
-  
+  // Effect to initialize the ingredients state when the component mounts
   useEffect(() => {
+    // Initialize the ingredients state with the ingredients data
     let initialIngredientsState = ingredientsData.ingredients.reduce((acc, ingredient) => {
+      // For each ingredient, add it to the accumulator object with a count of 0
       acc[ingredient.name] = { ...ingredient, count: 0 };
+      // Return the updated accumulator object for the next iteration
       return acc;
-    }, {});
+    }, {}); // Start with an empty object as the initial value for the accumulator
+
+    // Set the initial state of the ingredients using the generated initialIngredientsState
     setIngredients(initialIngredientsState);
   }, []);
 
 
 
-  let updateIngredientCount = (ingredientName, i) => {
+  // Function to update the count of an ingredient
+  let updateIngredientCount = (ingredient, i) => {
+
+    // Use the setIngredients function to update the state based on the previous state
     setIngredients((prevIngredients) => {
-      let newCount = Math.max(prevIngredients[ingredientName].count + i, 0);
+      // Calculate the new count for the ingredient by adding the increment/decrement value (i) to the current count
+    // Ensure the new count is not negative by using Math.max
+      let newCount = Math.max(prevIngredients[ingredient].count + i, 0);
+       // Return a new object that spreads the previous ingredients state and updates the count of the specified ingredient
       return { 
         ...prevIngredients,
-        [ingredientName]: {
-          ...prevIngredients[ingredientName],
+        [ingredient]: {
+          ...prevIngredients[ingredient],
           count: newCount
         }
       };
@@ -36,13 +47,19 @@ const CreatePizza = () => {
   }; 
  
   
-
+   // Function to calculate the total price of the pizza
   let totalPrice = () => {
-    return Object.values(ingredients).reduce((total, ingredient) => {         
+     // Use Object.values to get an array of ingredient objects from the ingredients state
+    return Object.values(ingredients).reduce((total, ingredient) => {   
+      // For each ingredient, multiply its count by its price and add it to the total
+      // This calculates the total cost of all selected ingredients      
       return total + ingredient.count * ingredient.price;
     }, 5); // Starting with a base price of 5
   };
-                              
+  
+
+
+  // Function to add the custom pizza to the cart
   let add = () => {
     let selectedIngredients = Object.values(ingredients).filter(ingredient => ingredient.count > 0);
     let pizzaToAdd = {
