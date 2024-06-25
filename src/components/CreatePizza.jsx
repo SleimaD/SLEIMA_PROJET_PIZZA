@@ -74,10 +74,9 @@ const CreatePizza = () => {
   };
 
 
-    let imagePath = (imageFile) => {
-        const baseUrl = import.meta.url; 
-        return new URL(`../assets/${imageFile}`, baseUrl).href; 
-    };
+  let imagePath = (imageFile) => {
+    return new URL(`../assets/${imageFile}`, import.meta.url).href;
+};
 
 
 
