@@ -43,7 +43,7 @@ const PizzaList = () => {
         return new URL(`../assets/${imageFile}`, baseUrl).href; 
     };
       
-      const pizzaClick = (pizzaId) => {
+    const pizzaClick = (pizzaId) => {
         navigate(`/pizza/${pizzaId}`);
     };
                       

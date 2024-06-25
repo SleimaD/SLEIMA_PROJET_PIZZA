@@ -38,7 +38,7 @@ const pizzaSlice = createSlice({
           // If no ingredient is selected (or if the action is reset), display all pizzas
               state.sortedPizzas = state.pizzas;
           }
-      },
+      },       
       },
 });
 

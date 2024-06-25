@@ -10,5 +10,3 @@ export const store = configureStore({
   devTools: true,
 });
 
-
-
