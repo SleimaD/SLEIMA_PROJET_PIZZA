@@ -39,13 +39,15 @@ const PizzaList = () => {
         
 
     let imagePath = (imageFile) => {
-        const baseUrl = import.meta.url; 
-        return new URL(`../assets/${imageFile}`, baseUrl).href; 
+        return new URL(`../assets/${imageFile}`, import.meta.url).href;
     };
       
     const pizzaClick = (pizzaId) => {
         navigate(`/pizza/${pizzaId}`);
     };
+
+
+
                       
     
 
